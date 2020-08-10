@@ -1,0 +1,17 @@
+spaBrowser->spaServer: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+spaServer-->spaBrowser: HTML-code
+spaBrowser->spaServer: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+spaServer-->spaBrowser: CSS-code
+spaBrowser->spaServer: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+spaServer-->spaBrowser: JS-code
+spaBrowser->spaServer: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+spaServer-->spaBrowser: Data JSON [content:"note", date:"YYYY-MM-DD"]
+
+note over spaBrowser:
+Create a note using SPA
+Submit event
+prevent Default page reload
+end note 
+spaBrowser->spaServer: HTTP  POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+spaBrowser->spaServer: content-type:"application/json" [content:"note", time:"YYYY-MM-DD"]
+spaServer-->spaBrowser: 201 Post Created 
